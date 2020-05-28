@@ -50,7 +50,7 @@ libareafix = library('areafix', src,
   version:'1.9.0',
   install : true)
 
-fidoconf_dep = declare_dependency(
+areafix_dep = declare_dependency(
   link_with: libareafix,
   dependencies: [fidoconf_dep],
   include_directories : incdir)
