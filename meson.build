@@ -56,3 +56,9 @@ areafix_dep = declare_dependency(
   include_directories : incdir)
 
 install_headers(headers, subdir: 'areafix')
+
+pkg = import('pkgconfig')
+
+pkg.generate(libareafix,
+             name: 'areafix',
+             description: 'Areafix is a library implementing Areafix and Filefix functionality')
