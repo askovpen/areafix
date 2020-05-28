@@ -2,6 +2,10 @@ project('areafix','c', version:'1.9.0')
 
 cc = meson.get_compiler('c')
 
+add_project_arguments(
+  '-I'+meson.current_source_dir()+'/areafix',
+  language : 'c')
+
 link_args = []
 compile_args = []
 
@@ -39,7 +43,7 @@ headers = files([
   'areafix/version.h',
 ])
 
-incdir = include_directories(['areafix','.'])
+incdir = include_directories(['.'])
 
 fidoconf_proj = subproject('fidoconf')
 fidoconf_dep=fidoconf_proj.get_variable('fidoconf_dep')
